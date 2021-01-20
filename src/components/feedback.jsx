@@ -1,67 +1,46 @@
-import React, {useState} from "react";
 import axios from "axios";
+import React, {useState} from "react";
 
 
 function Feedback(){
-    const [feedback, setFeedback] = useState({
-        name:"",
-        email:"",
-        phone:""
-    })
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
 
 
-
-
+    function handleNameChange(e){
+        const name = e.target.value;
+        setName(name);
+    }
+    function handleEmailChange(e){
+        const email = e.target.value;
+        setEmail(email);
+    }
+    function handlePhoneChange(e){
+        const phone = e.target.value;
+        setPhone(phone);
+    }
     function handleSubmit(e){
         e.preventDefault();
-    }
-
-    function handleFunction(event){
-        const { value, name } = event.target;
-
-        setFeedback(function(prevValue){
-            if(name==="name"){
-                return {
-                    name: value,
-                    email: prevValue.email,
-                    phone: prevValue.phone
-                };
-            }else if(name==="email"){
-                return {
-                    name:prevValue.name,
-                    email:value,
-                    phone:prevValue.phone
-                };
-            }else{
-                return {
-                    name:prevValue.name,
-                    email:prevValue.email,
-                    phone:value
-                };
-            }
-        })
-
-        const feedbackData = {
-            name : feedback.name,
-            email : feedback.email,
-            phone : feedback.phone 
+        const feedback = {
+            name:name,
+            email:email,
+            phone:phone
         }
-        
-        axios.post("http://localhost:4000/feedback", feedbackData, function(res){
+        console.log(feedback)
+        axios.post("http://localhost:4000/feedback", feedback, function(res){
             console.log(res.data)
         })
     }
-
-
 
     return (
         <div className="row">
         <div className="col-lg-3 mx-auto columnMargin">
         <form className="" onSubmit={handleSubmit}>
-            <input  className="form-control" onChange={handleFunction} type="text" name="name" placeholder="Enter Your Name" value={feedback.name}></input><br/>
-            <input  className="form-control" onChange={handleFunction} type="email" name="email" placeholder="Enter Your Email" value={feedback.email}></input><br/>
-            <input  className="form-control" onChange={handleFunction} type="tel" name="contactNumber" placeholder="Enter Your Contact Number" value={feedback.phone}></input><br/>
-            <button className="btn-block btn-dark" onClick={handleFunction}>Submit</button>
+            <input  className="form-control" onChange={handleNameChange} type="text" name="name" placeholder="Enter Your Name" value={name}></input><br/>
+            <input  className="form-control" onChange={handleEmailChange} type="email" name="email" placeholder="Enter Your Email" value={email}></input><br/>
+            <input  className="form-control" onChange={handlePhoneChange} type="tel" name="contactNumber" placeholder="Enter Your Contact Number" value={phone}></input><br/>
+            <button className="btn-block btn-dark" onClick={handleSubmit}>Submit</button>
         </form>
         </div>
         </div>
