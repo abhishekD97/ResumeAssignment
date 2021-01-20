@@ -1,0 +1,97 @@
+body 
+{
+    height: 100%;
+    margin: 0;
+}
+
+nav
+{
+    margin-right: 20px;
+}
+
+.navbar
+{
+    margin-right: 20%;
+}
+
+.nav-item
+{
+    margin: auto 15%;
+}
+
+.hoverli:hover
+{
+    text-decoration: none;
+}
+
+.navbar-brand
+{
+    padding-left: 1.4%;
+}
+
+.footer
+{
+    background-color:#312c51;
+    position: fixed;
+    height: 12%;
+    padding: 23px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.imageSize
+{
+    height: 15px;
+    margin: auto 1%;
+    filter: invert(100%);
+}
+
+.copyright
+{
+    margin: 0.5%;
+    color: white;
+    font-size: 10px;
+}
+ .cardBody
+ {
+    line-height: 0.7rem;
+ }
+
+ .cardBody p
+ {
+    margin-top: 30px;
+ }
+
+ .columnMargin
+ {
+    margin-top: 6%;
+ }
+
+.profileImageCss
+{
+    margin-left: 35%;
+    height: 110%;
+    width: 50%;
+    border-style: solid;
+    border-radius: 100%;
+}
+
+.skillsRow
+{
+    margin-top: 2%;
+    text-align: center;
+    padding : 5%;
+}
+
+.skillsImg
+{
+    height: 60px;
+    width: 60px;
+}
+
+.skillsItem
+{
+    border: 15%;
+}
