@@ -9,29 +9,34 @@ function Feedback(){
 
 
     function handleNameChange(e){
-        const name = e.target.value;
-        setName(name);
+        const names = e.target.value;
+        setName(names);
     }
     function handleEmailChange(e){
-        const email = e.target.value;
-        setEmail(email);
+        const emails = e.target.value;
+        setEmail(emails);
     }
     function handlePhoneChange(e){
-        const phone = e.target.value;
-        setPhone(phone);
+        const phones = e.target.value;
+        setPhone(phones);
     }
     function handleSubmit(e){
         e.preventDefault();
-        const feedback = {
-            name:name,
-            email:email,
-            phone:phone
+        // console.log(name);
+        const data = {
+            name,
+            email,
+            phone
         }
-        console.log(feedback)
-        axios.post("http://localhost:4000/feedback", feedback, function(res){
-            console.log(res.data)
-        })
-    }
+        axios.post('http://localhost:4000/feedback', data)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        }
+    
 
     return (
         <div className="row">
@@ -39,7 +44,7 @@ function Feedback(){
         <form className="" onSubmit={handleSubmit}>
             <input  className="form-control" onChange={handleNameChange} type="text" name="name" placeholder="Enter Your Name" value={name}></input><br/>
             <input  className="form-control" onChange={handleEmailChange} type="email" name="email" placeholder="Enter Your Email" value={email}></input><br/>
-            <input  className="form-control" onChange={handlePhoneChange} type="tel" name="contactNumber" placeholder="Enter Your Contact Number" value={phone}></input><br/>
+            <input  className="form-control" onChange={handlePhoneChange} type="tel" name="phone" placeholder="Enter Your Contact Number" value={phone}></input><br/>
             <button className="btn-block btn-dark" onClick={handleSubmit}>Submit</button>
         </form>
         </div>

@@ -1,6 +1,8 @@
 import React from "react";
 
+
 function Resume(){
+
     return (
         <div className="row skillsRow">
             <div className="col-lg-3 mx-auto skillsItem">

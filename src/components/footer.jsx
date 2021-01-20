@@ -5,9 +5,9 @@ function Footer()
 {
     return(
         <footer className="footer">
-            <img className="imageSize" src="https://www.flaticon.com/svg/vstatic/svg/2111/2111425.svg?token=exp=1611052739~hmac=4d3905b872844cdf69f453cb8553225b" alt="footer "></img>
-            <img className="imageSize" src="https://www.flaticon.com/svg/vstatic/svg/1384/1384088.svg?token=exp=1611052906~hmac=7dbe742a38dfab898ddd57df75ae8cbe" alt="footer"></img>
-            <img className="imageSize" src="https://www.flaticon.com/svg/vstatic/svg/1077/1077042.svg?token=exp=1611052962~hmac=5196af4bc86c320216010be46211ed92" alt="footer"></img>
+            <img className="imageSize" src="https://www.flaticon.com/svg/vstatic/svg/2111/2111532.svg?token=exp=1611162595~hmac=1f110e1e4c84a7b40d6ea6eb7a669808" alt="footer "></img>
+            <img className="imageSize" src="https://www.flaticon.com/svg/vstatic/svg/733/733609.svg?token=exp=1611162566~hmac=ce78ccdcc40e82dec8de6540da2e87e9" alt="footer"></img>
+            <img className="imageSize" src="https://www.flaticon.com/svg/vstatic/svg/1384/1384031.svg?token=exp=1611162620~hmac=1d8a5aec9a15f3aca125a90bfa25bb23" alt="footer"></img>
             <p className="copyright">© Year Abhishek VD </p>
         </footer>
     );

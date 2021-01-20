@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 function Home() {
+    
+    const [name, setName] = useState("");
+    const [role, setRole] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [location, setLocation] = useState("");
+
+    function setVariables(data){
+        setName(data[0].name);
+        setRole(data[0].role);
+        setEmail(data[0].email);
+        setPhone(data[0].phone);
+        setLocation(data[0].location);
+    }
+
+    axios.get("http://localhost:4000/home").then( (response) => {
+        setVariables(response.data)        
+    } )
+
     return (
         <div className="row">
             <div className="col-lg-5 mx-auto columnMargin">
@@ -9,11 +29,11 @@ function Home() {
             <div className="col-lg-5 mx-auto columnMargin">
                 <div className="card border-0">
                     <div className="card-body cardBody">
-                        <h2>Abhishek Dolli</h2>
-                        <h6><strong>Web Developer</strong></h6>
-                        <p> 📧 abhishekdolli@gmail.com</p>
-                        <p> 📱 8904047354</p>
-                        <p> 📍 Hubli, Karnataka</p>
+                        <h2> {name} </h2>
+                        <h6><strong> {role} </strong></h6>
+                        <p> 📧 {email}</p>
+                        <p> 📱 {phone}</p>
+                        <p> 📍 {location}</p>
                     </div>
                 </div>
             </div>
