@@ -1,37 +1,217 @@
-body 
+html, body 
 {
-    height: 100%;
-    margin: 0;
+    width: 100% !important;
+    background: rgb(28,27,27);
+    background: radial-gradient(circle, rgba(28,27,27,1) 15%, rgba(20,20,24,1) 42%, rgba(22,21,21,1) 71%);
+}
+/* Background Effect for feedback */
+/* .background {
+    background: url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b")
+      no-repeat center center/cover !important;
+    position: absolute !important;
+    top: -20px !important;
+    bottom: -20px !important;
+    left: -20px !important;
+    right: -20px !important;
+    z-index: -1 !important;
+    filter: blur(20px) !important;
+  } */
+  /* xxx-Background Effect for feedback-xxx */
+/* --------------------------------------------------------------------------------- */
+.btn-one {
+	color: #FFF !important;
+	transition: all 0.3s;
+	position: relative;
+}
+.btn-one span {
+	transition: all 0.3s;
+}
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(255,255,255,0.5);
+	border-bottom-color: rgba(255,255,255,0.5);
+	transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+	letter-spacing: 2px;
+}
+.btn-one:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
 }
 
-nav
+.navIcon
 {
-    margin-right: 20px;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    z-index: 2;
 }
 
-.navbar
+.navIcon:hover
 {
-    margin-right: 20%;
+    color: black;
 }
 
-.nav-item
-{
-    margin: auto 15%;
-}
 
-.hoverli:hover
+.fa
 {
+    color: #efefef;
+}
+.fa.fa-xing {
+    position: absolute;
+    left: 1.5%;
+    top : 3%;
+  }
+
+/* -------------------------------------------------------------------------------- */
+
+/* ------------------------------------Sliding bar animation-------------------------------------------- */
+ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  ul li {
+    list-style: none;
+  }
+  ul li::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 6em;
+    font-weight: 700;
+    pointer-events: none;
+    opacity: 0;
+    letter-spacing: 20px;
+    transition: 0.5s;
+    white-space: nowrap;
+  }
+  ul li:hover::before {
+    opacity: .05;
+    letter-spacing: 5px;
+  }
+  ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 6px 15px;
     text-decoration: none;
-}
+    background: inherit;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  ul:hover li a {
+    opacity: 0;
+  }
+  ul li a:hover {
+    transform: scale(1.4);
+    z-index: 1000;
+    background: #ff3f81;
+    opacity: 1;
+  }
+  ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transform: skewX(35deg);
+    transition: 0s;
+  }
+  ul li a:hover::before {
+    left: calc(100% + 100px);
+    transition: 0.5s;
+    transition-delay: 0.2s;
+  }
+/* ------------------------------------Sliding bar animation-------------------------------------------- */
 
-.navbar-brand
-{
-    padding-left: 1.4%;
-}
 
-.footer
+/* -------------------------------------------------------------------------------- */
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  
+  }
+  
+  .sidenav a:hover{
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+/* ------------------------------- */
+
+
+.footerN
 {
-    background-color:#312c51;
+    background-color:#393e46;
     position: fixed;
     height: 12%;
     padding: 23px;
@@ -69,6 +249,99 @@ nav
     margin-top: 6%;
  }
 
+ .customFeedback
+ {
+    margin-top: 6%;
+    width: 60%;
+    height: 60%;
+    background-color: rgba(255,255,255,.15);
+    backdrop-filter: blue(5px);
+ }
+
+ .feedbackHeader
+ {
+     color: white;
+     padding-top: 5%;
+     padding-left: 10%;
+ }
+ 
+ .headerRuleFeedback
+ {
+    border-top: 1px solid gray;
+    border-width: thin;
+    width: 80px;
+    display: inline-block;
+    margin-left: 11%;
+ }
+
+ .formButton
+ {
+     margin-left: 10%;
+     border-radius: 10px !important;
+     margin-bottom: 5%;
+ }
+
+ .customfeedbackCard{
+     padding-left: 0 !important;
+     padding-right: 0 !important;
+ }
+
+ .feedbackRow{
+     margin: auto 0 !important;
+ }
+
+
+ .rightFeedback
+ {
+     border-color: white;
+     border-left: solid 1px !important;
+ }
+
+ .feedbackTextarea
+ {  
+    width: 80%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 11%;
+    background-color: inherit !important;
+    border:none !important;
+ }
+
+ .feedbackTextarea::placeholder
+ {
+    color: white;
+ }
+
+ .feedbackTextarea:focus
+ {
+    outline: none;
+    color: white;
+ }
+
+ .form-control
+ {
+     width: 80% !important;
+ }
+
+ .formInput
+ {
+    background-color: inherit !important;
+    border: none !important;
+    border-bottom: solid 1px gray !important;
+    border-radius: 0px !important;
+    color: white !important;
+ }
+
+ .formInput::placeholder
+ {
+     color: white !important;
+ }
+
+ .formInput:focus
+ {
+    color: white !important;
+ }
+
 .profileImageCss
 {
     margin-left: 35%;
@@ -94,4 +367,69 @@ nav
 .skillsItem
 {
     border: 15%;
+}
+
+/* ----------------------------floating contact display-------------------------------- */
+
+/* Home Page Introduction */
+.first
+{
+  margin-right: 19.8%;
+  margin-bottom: 0;
+  color: #bbbfca;
+}
+
+.second
+{
+  margin-right: 1.2%;
+  margin-bottom: 0px;
+  margin-top: 0;
+  font-size: 50px;
+  color: #bbbfca;
+}
+
+.third
+{
+  margin-top: 5px;
+  margin-right: 7.2%;
+  font-size: 20px;
+  color: #bbbfca;
+}
+
+.buttonIntro
+{
+  margin-top: 15px;
+  margin-right: 11.8%;
+  width: 10%;
+}
+
+/* Profile Section */
+.profileSection
+{
+  
+}
+
+.profileSection hr
+{
+  border-color: white;
+}
+
+.ProfileDataHeader
+{
+  
+}
+
+.ProfileDataIcon
+{
+
+}
+
+.ProfileData
+{
+  padding-left: 5%;
+}
+
+table
+{
+  width: 70%;
 }

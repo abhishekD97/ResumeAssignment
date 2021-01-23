@@ -6,6 +6,8 @@ import Home from "./home";
 import Header from "./header";
 import Feedback from "./feedback";
 import Resume from "./resume";
+import Project from "./project";
+import Contact from "./contact";
 
 
 
@@ -22,7 +24,7 @@ function App(){
                 <Route path="/projects" component={Projects} />
                 <Route path="/feedback" component={Feedback} />
         {/*------------------------------FOOTER----------------------------------------*/}
-                <Footer/>
+                {/* <Footer/> */}
         </Router>
         </div>
         
