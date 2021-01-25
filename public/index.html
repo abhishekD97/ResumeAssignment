@@ -7,10 +7,38 @@
     <style>
         </style>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="background"></div>
     <div id="root"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         window.onload = (event) => {
+        var i = 0;
+        var txt1 = "I'm Abhishek";
+        var txt2 = "MERN Satck Developer";
+        var txt2 = "Stack Developer";
+        var speed = 50;
+
+    function name() {
+        if (i < txt1.length) {
+        document.getElementById("firstName").innerHTML += txt1.charAt(i);
+        i++;
+        setTimeout(name, speed);
+        }
+        }
+
+    // function roleAnimation() {
+    //     if (i < txt.length) {
+    //     document.getElementById("roleDescp").innerHTML += txt.charAt(i);
+    //     i++;
+    //     setTimeout(typeWriter, speed);
+    //     }
+    //     }
+      };
+    </script>
 </body>
 </html>
