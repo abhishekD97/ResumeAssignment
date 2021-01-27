@@ -16,6 +16,7 @@ function App(){
         {/*------------------------------HEADER----------------------------------------*/}
                 <Header/>
         {/*------------------------------BODY----------------------------------------*/}
+                <Route path="/" exact component={Resume} />
                 <Route path="/resume" exact component={Resume} />
                 <Route path="/projects" component={Projects} />
                 <Route path="/feedback" component={Feedback} />

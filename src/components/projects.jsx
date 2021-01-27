@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Modal from "react-modal";
-import Project from "./Project";
+import Project from "./project";
 
 function Projects() {
     const [modalOneOpen, setModalOne] = useState(false);
