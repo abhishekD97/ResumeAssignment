@@ -15,30 +15,14 @@
     <div id="background"></div>
     <div id="root"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-         window.onload = (event) => {
-        var i = 0;
-        var txt1 = "I'm Abhishek";
-        var txt2 = "MERN Satck Developer";
-        var txt2 = "Stack Developer";
-        var speed = 50;
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.4/firebase-app.js"></script>
 
-    function name() {
-        if (i < txt1.length) {
-        document.getElementById("firstName").innerHTML += txt1.charAt(i);
-        i++;
-        setTimeout(name, speed);
-        }
-        }
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.4/firebase-analytics.js"></script>
 
-    // function roleAnimation() {
-    //     if (i < txt.length) {
-    //     document.getElementById("roleDescp").innerHTML += txt.charAt(i);
-    //     i++;
-    //     setTimeout(typeWriter, speed);
-    //     }
-    //     }
-      };
-    </script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 </body>
 </html>
