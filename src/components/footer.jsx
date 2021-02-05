@@ -9,7 +9,7 @@ function Footer()
             <br/>
             <br/>
             <br/>
-            <img className="footerBrand" src="https://fuego.qodeinteractive.com/wp-content/themes/fuego/assets/img/logo_white.png" alt="light logo"></img>
+            {/* <h1 className="footerBrand">Abhi</h1> */}
             <br/>
             <br/>
             <br/>

@@ -26,7 +26,7 @@ function Header(){
 
     return (
         <header>
-            <img className="fafa-xing" src="https://fuego.qodeinteractive.com/wp-content/themes/fuego/assets/img/logo_white.png" alt="light logo"></img>
+            <h1 className="fafa-xing">🎓</h1>
             <div id="mySidenav" className="sidenav">
             <ul>
             <li data-text="Home"><a name="resume" className="nav-link listAnchor" destination="/resume" onClick={anchorTagAnimation}>Home</a></li>
